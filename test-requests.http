@@ -1,0 +1,31 @@
+@host = http://localhost:3000
+
+### GET WELCOME MESSAGE
+GET {{host}}
+
+### GET ALL USERS ARRAY
+GET {{host}}/users
+
+### GET SPECIFIC USER
+GET {{host}}/users/2
+
+### GET INVALID USER
+GET {{host}}/users/877
+
+### POST NEW PLAYLIST TO USER 2
+POST {{host}}/users/2/playlists
+Content-Type: application/json
+
+{
+  "name": "The Greatest Playlist Ever Made",
+  "description": "mostly rap, classic rock, and EDM"
+}
+
+### POST PLAYLIST TO AN INVALID USER
+POST {{host}}/users/200/playlists
+Content-Type: application/json
+
+{
+  "name": "The Lamest Playlist Ever Made",
+  "description": "mostly ICP and counrty rock"
+}
